@@ -1,0 +1,27 @@
+{
+  "name": "saturn",
+  "version": "0.0.1",
+  "description": "Discord Bot",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "npx nodemon Source/main.js",
+    "start": "node Source/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saturnbotdev/Saturn.git"
+  },
+  "author": "TheEpicPenguin13, AaronBlossoms",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saturnbotdev/Saturn/issues"
+  },
+  "homepage": "https://github.com/saturnbotdev/Saturn#readme",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "enmap": "^5.3.3",
+    "fs": "0.0.1-security",
+    "nodemon": "^2.0.4"
+  }
+}
