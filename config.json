@@ -1,3 +1,7 @@
 {
-    "Prefix": "s!"
+    "Prefix": "s!",
+    "Modules": [
+        "General",
+        "Moderation"
+    ]
 }

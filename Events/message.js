@@ -6,7 +6,8 @@ module.exports = (client, message) => {
     const Arguments = message.content.slice(client.Config.Prefix.length).trim().split(/ +/g);
     const Command = Arguments.shift().toLowerCase();
 
-    const Cmd = client.Commands.get(Command);
+    const Cmd = client.Commands.get(Command)
+                || client.Commands.find(cmd => cmd.config.aliases && cmd.config.aliases.includes(Command));
     if (!Cmd) return;
 
     Cmd.run(client, message, Arguments);

@@ -19,15 +19,19 @@ FileSystem.readdir("./Events/", (err, files) => {
 });
 
 Client.Commands = new Enmap();
-FileSystem.readdir("./Commands/", (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        if (!file.endsWith(".js")) return;
-        const Command = require(`./Commands/${file}`);
-        let commandName = file.split(".")[0];
-        Client.Commands.set(commandName, Command);
-        console.log(`[LOADED] Loaded ${commandName}.`);
+Client.Config.Modules.forEach(module => {
+    FileSystem.readdir(`./Commands/${module}`, (err, files) => {
+        if (err) return console.error(err);
+        files.forEach(file => {
+            if (!file.endsWith(".js")) return;
+            const Command = require(`./Commands/${module}/${file}`);
+            let commandName = file.split(".")[0];
+            Client.Commands.set(commandName, Command);
+            console.log(`[LOADED] Loaded Command ${commandName}.`);
+        });
     });
+    console.log(`[LOADED] Loaded Module ${module}`)
 });
+
 
 Client.login(Client.Token);
