@@ -6,5 +6,9 @@ module.exports.run = (client, message, args) => {
 }
 
 module.exports.config = {
-    aliases: []
+    name: "ping",
+    aliases: [],
+    module: "general",
+    usage: "s!ping",
+    description: "Receives the client and API ping."
 }
