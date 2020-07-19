@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = (client, message, args) => {
     const Embed = new Discord.MessageEmbed()
-    .setColor("#ff8336")
+    .setColor("#ff8336");
     switch (args.length) {
         case 0: {
             Embed.setTitle("help | Command List")

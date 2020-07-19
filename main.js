@@ -30,7 +30,7 @@ Client.Config.Modules.forEach(module => {
             console.log(`[LOADED] Loaded Command ${commandName}.`);
         });
     });
-    console.log(`[LOADED] Loaded Module ${module}`)
+    console.log(`[LOADED] Loaded Module ${module}`);
 });
 
 
