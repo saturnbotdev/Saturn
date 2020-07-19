@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const Roblox = require("noblox.js");
 const FileSystem = require("fs");
 const Enmap = require("enmap");
 
@@ -8,6 +9,12 @@ const Config = require("./config.json")
 const Client = new Discord.Client();
 Client.Token = Secret.Token;
 Client.Config = Config;
+
+async function run() {
+    await Roblox.setCookie(Secret.RobloxToken);
+    Client.Roblox = Roblox;
+}
+run();
 
 FileSystem.readdir("./Events/", (err, files) => {
     if (err) return console.error(err);
